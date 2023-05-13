@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: owner/repo # Path to your Github repository
+  repo: BrunoPirard/grapejs.local # Path to your Github repository
   branch: master # Branch to update (master by default)
 
 media_folder: "_site/images/uploads" # Folder images
