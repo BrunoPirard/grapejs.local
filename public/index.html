@@ -5,9 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/grapesjs/0.12.17/grapes.min.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/grapesjs/0.12.17/css/grapes.min.css"/>
-        <link rel="stylesheet" href="css/style.css"/>
+        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+        <link rel="stylesheet" href="/assets/css/style.css"/>
     </head>
     <header>
     <ul><li><a href="/">Accueil</a></li>
@@ -16,13 +15,18 @@
 </header>
     <body>
         
-## Page d'acceuil uniquement
-
-lorem ipsum c'est très bien
-
-C'est la fin
-
-Hello !Hihi c 'est bien
+Error: Library prettydiff.beautify.markdown does not exist.
+        <script>
+            if (window.netlifyIdentity) {
+                window.netlifyIdentity.on("init", user => {
+                    if (!user) {
+                        window.netlifyIdentity.on("login", () => {
+                            document.location.href = "/admin/";
+                        });
+                    }
+                });
+            }
+        </script>
     </body>
     <footer>
     <p>FOOTER</p>

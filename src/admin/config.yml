@@ -1,0 +1,3 @@
+backend:
+  name: github
+  repo: BrunoPirard/grapesjs # Path to your Github repository
