@@ -9,20 +9,22 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/grapesjs/0.12.17/css/grapes.min.css"/>
         <link rel="stylesheet" href="css/style.css"/>
     </head>
+    <header>
+    <ul><li><a href="/">Accueil</a></li>
+<li><a href="/pages/contact/">Contact</a></li>
+<li><a href="/pages/blog/">Blog</a></li></ul>
+</header>
     <body>
-        <h1>Mon titre</h1>
-        {{ content | safe }}
-        <script type="text/javascript">
-            setTimeout(() => {
-                window.editor = grapesjs.init({
-                    height: '100%',
-                    showOffsets: true,
-                    noticeOnUnload: false,
-                    storageManager: false,
-                    container: '#gjs',
-                    fromElement: true
-                });
-            });
-        </script>
+        
+## Page d'acceuil uniquement
+
+lorem ipsum c'est très bien
+
+C'est la fin
+
+Hello !Hihi c 'est bien
     </body>
+    <footer>
+    <p>FOOTER</p>
+</footer>
 </html>

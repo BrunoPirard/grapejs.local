@@ -1,5 +1,5 @@
 ---
-layout: layouts/post.njk
+layout: post.njk
 title: My Second post
 description: The Second post
 date: 2023-05-03
