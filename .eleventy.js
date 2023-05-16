@@ -23,7 +23,7 @@ module.exports = function (eleventyConfig) {
           '11ty.js'
           ],
         htmlTemplateEngine: "njk",
-        markdownTemplateEngine: "njk",
+        //markdownTemplateEngine: "njk",
         passthroughFileCopy: true,
         
     };
