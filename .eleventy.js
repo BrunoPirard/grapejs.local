@@ -2,10 +2,10 @@ const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 module.exports = function (eleventyConfig) {
     // Passtrough
+    eleventyConfig.addPassthroughCopy('robots.txt')
     eleventyConfig.addPassthroughCopy("src/assets");
     eleventyConfig.addPassthroughCopy("src/admin");
     eleventyConfig.addPassthroughCopy("src/images");
-    eleventyConfig.addPassthroughCopy("robots.txt");
 
     // Plugins
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
