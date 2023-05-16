@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: BrunoPirard/grapejs
+  repo: BrunoPirard/grapejs.local
 
 media_folder: "public/assets/images/uploads"
 public_folder: "/images"
