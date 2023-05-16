@@ -1,7 +1,8 @@
 /* Reset css */
-*,
-*::before,
-*::after {
+* {
+  box-sizing: border-box;
+}
+*::before, *::after {
   box-sizing: border-box;
 }
 
@@ -254,7 +255,6 @@ textarea {
   src: url("../fonts/oxygen-v15-latin-ext-700.woff2") format("woff2");
   src: url("../fonts/oxygen-v15-latin-ext-700.woff") format("woff");
 }
-
 body {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -276,7 +276,7 @@ header {
   justify-content: space-between;
   align-items: center;
   height: 10vh;
-  background-color:bisque ;
+  background-color: bisque;
 }
 
 .navigation ul {
@@ -284,17 +284,15 @@ header {
   display: flex;
   flex-direction: row;
 }
-
 .navigation li {
   margin: 12px;
 }
-
 .navigation li.active-page {
   font-weight: bold;
 }
 
 a {
-  color:brown;
+  color: brown;
   text-decoration: none;
   font-weight: 400;
 }
@@ -308,7 +306,8 @@ main {
   background-color: white;
 }
 
-article, .pages {
+article,
+.pages {
   width: 100%;
   max-width: 1280px;
   padding: 50px;
@@ -320,7 +319,7 @@ footer {
   justify-content: center;
   align-items: center;
   height: 4vh;
-  background-color:bisque;
+  background-color: bisque;
 }
 
 h1 {
@@ -353,3 +352,5 @@ p {
   font-weight: inherit;
   line-height: inherit;
 }
+
+/*# sourceMappingURL=style.css.map */

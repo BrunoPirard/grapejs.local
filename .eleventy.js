@@ -3,7 +3,7 @@ const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 module.exports = function (eleventyConfig) {
     // Passtrough
     eleventyConfig.addPassthroughCopy('robots.txt')
-    eleventyConfig.addPassthroughCopy("src/assets");
+    eleventyConfig.addPassthroughCopy("src/assets/fonts");
     eleventyConfig.addPassthroughCopy("src/admin");
     eleventyConfig.addPassthroughCopy("src/images");
 
@@ -24,6 +24,10 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addFilter("year", () => {
         return dayjs().format("YYYY");
     });
+
+    eleventyConfig.setBrowserSyncConfig({
+		  files: './public/assets/css/**/*.css'
+	  });
 
     /* Markdown plugins */
     // https://www.11ty.dev/docs/languages/markdown/

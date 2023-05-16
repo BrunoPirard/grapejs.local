@@ -4,8 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "eleventy --serve"
-  },
+  "watch:sass": "sass --watch src/assets/sass:public/assets/css",
+  "build:sass": "sass src/assets/sass:public/assets/css",
+  "watch:eleventy": "eleventy --serve",
+  "build:eleventy": "eleventy",
+  "start": "npm-run-all build:sass --parallel watch:*",
+  "build": "npm-run-all build:*"
+},
   "keywords": [],
   "author": "",
   "license": "MIT",
