@@ -279,16 +279,17 @@ header {
   background-color:bisque ;
 }
 
-ul.menu {
+.navigation ul {
   list-style-type: none;
   display: flex;
   flex-direction: row;
 }
 
-li.menu {
+.navigation li {
   margin: 12px;
 }
-li.menu li.active-page {
+
+.navigation li.active-page {
   font-weight: bold;
 }
 
