@@ -16,7 +16,6 @@ collections:
       - { label: "Pages Type", name: "type", widget: "string" }
       - { label: "Pages Description", name: "description", widget: "markdown" }
       - { label: "Pages Date", name: "date", widget: "datetime" }
-      - { label: "Pages Time", name: "time", widget: "string" }
 
   - name: "posts"
     label: "Posts"
@@ -26,3 +25,5 @@ collections:
       - { label: "Posts Title", name: "title", widget: "string" }
       - { label: "Posts Type", name: "type", widget: "string" }
       - { label: "Posts Description", name: "description", widget: "markdown" }
+      - { label: "Posts Date", name: "date", widget: "datetime" }
+      - { label: "Posts Featured", name: "featuredImage", widget: "image" }

@@ -2,16 +2,15 @@
 title: Blog
 type: pages
 description: Archive des articles
+date: 2023-05-04
 eleventyNavigation:
   key: Blog
   order: 2
 ---
 
-<h1>Mes Articles</h1>
-<article>
-  <ul role="list" class="article__list">
-    {% for post in collections.posts | reverse %}
-      {% include 'partials/post-archive.njk' %}
-    {%- endfor %}
-  </ul>
-</article>
+<h1>Mes Articles</h1></br><article>
+<ul role="list" class="article__list">
+  {% for post in collections.posts | reverse %}
+    {% include 'partials/post-archive.njk' %}
+  {%- endfor %}
+</ul></article>
