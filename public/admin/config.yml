@@ -3,7 +3,7 @@ backend:
   repo: BrunoPirard/grapejs.local
 
 media_folder: "public/assets/images/uploads"
-public_folder: "/images"
+public_folder: "/images/uploads"
 
 collections:
   - name: "pages"
