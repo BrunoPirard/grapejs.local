@@ -3,20 +3,9 @@ backend:
   repo: BrunoPirard/grapejs.local
 
 media_folder: "public/images"
-public_folder: "/images"
+public_folder: "/images/uploads/"
 
 collections:
-  - name: "pages"
-    label: "Pages"
-    folder: "src/pages"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - { label: "Pages Title", name: "title", widget: "string" }
-      - { label: "Pages Type", name: "type", widget: "string" }
-      - { label: "Pages Description", name: "description", widget: "markdown" }
-      - { label: "Pages Date", name: "date", widget: "datetime" }
-
   - name: "posts"
     label: "Posts"
     folder: "src/posts"
@@ -28,3 +17,14 @@ collections:
       - { label: "Posts Description", name: "description", widget: "markdown" }
       - { label: "Posts Date", name: "date", widget: "datetime" }
       - { label: "Posts Featured", name: "featuredImage", widget: "image" }
+
+  - name: "pages"
+    label: "Pages"
+    folder: "src/pages"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Pages Title", name: "title", widget: "string" }
+      - { label: "Pages Type", name: "type", widget: "string" }
+      - { label: "Pages Description", name: "description", widget: "markdown" }
+      - { label: "Pages Date", name: "date", widget: "datetime" }
