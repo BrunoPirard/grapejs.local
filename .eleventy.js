@@ -4,6 +4,7 @@ module.exports = function (eleventyConfig) {
     // Passtrough
     eleventyConfig.addPassthroughCopy("src/assets");
     eleventyConfig.addPassthroughCopy("src/admin");
+    eleventyConfig.addPassthroughCopy("robots.txt");
 
     // Plugins
     eleventyConfig.addPlugin(eleventyNavigationPlugin);

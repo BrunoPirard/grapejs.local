@@ -1,1 +1,354 @@
-h1 { color: red;}
+/* Reset css */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  line-height: 1;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+menu,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  background: transparent;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+}
+
+audio,
+canvas,
+video {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+img {
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+}
+
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+  font-style: inherit;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+legend {
+  color: #000;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+input,
+select {
+  vertical-align: middle;
+}
+
+textarea {
+  resize: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none;
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Oxygen";
+  font-style: normal;
+  font-weight: 300;
+  src: url("../fonts/oxygen-v15-latin-ext-300.woff2") format("woff2");
+  src: url("../fonts/oxygen-v15-latin-ext-300.woff") format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Oxygen";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/oxygen-v15-latin-ext-regular.woff2") format("woff2");
+  src: url("../fonts/oxygen-v15-latin-ext-regular.woff") format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Oxygen";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../fonts/oxygen-v15-latin-ext-700.woff2") format("woff2");
+  src: url("../fonts/oxygen-v15-latin-ext-700.woff") format("woff");
+}
+
+body {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: auto;
+  grid-template-areas: "header header header header" "main main main main" "footer footer footer footer";
+  min-height: 100vh;
+  font-family: "Oxygen";
+  font-size: 16px;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+  background-color: white;
+}
+
+header {
+  grid-area: header;
+  padding-left: 6%;
+  padding-right: 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  background-color:bisque ;
+}
+
+ul.menu {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+}
+
+li.menu {
+  margin: 12px;
+}
+li.menu li.active-page {
+  font-weight: bold;
+}
+
+a {
+  color:brown;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+main {
+  grid-area: main;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 86vh;
+  background-color: white;
+}
+
+article, .pages {
+  width: 100%;
+  max-width: 1280px;
+  padding: 50px;
+}
+
+footer {
+  grid-area: footer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 4vh;
+  background-color:bisque;
+}
+
+h1 {
+  font-size: var(--font-size-fluid-3);
+  font-weight: var(--font-weight-6);
+  line-height: var(--font-lineheight-6);
+}
+
+h2 {
+  font-size: var(--font-size-fluid-2);
+  font-weight: var(--font-weight-6);
+  line-height: var(--font-lineheight-5);
+}
+
+h3 {
+  font-size: var(--font-size-fluid-1);
+  font-weight: var(--font-weight-5);
+  line-height: var(--font-lineheight-4);
+}
+
+h4 {
+  font-size: var(--font-size-fluid-0);
+  font-weight: var(--font-weight-4);
+  line-height: var(--font-lineheight-3);
+}
+
+p {
+  color: black;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
