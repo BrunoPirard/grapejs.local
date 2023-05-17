@@ -1,4 +1,7 @@
+const { DateTime } = require("luxon");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 module.exports = function (eleventyConfig) {
     // Passtrough
@@ -9,6 +12,8 @@ module.exports = function (eleventyConfig) {
 
     // Plugins
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
+    eleventyConfig.addPlugin(syntaxHighlight);
+    eleventyConfig.addPlugin(pluginRss);
 
     // Add Date filters
     eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
@@ -24,6 +29,16 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addFilter("year", () => {
         return dayjs().format("YYYY");
     });
+
+    // Add Date filters v2 luxon
+    eleventyConfig.addFilter("readableDate", dateObj => {
+    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("dd LLL yyyy");
+  });
+
+  // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
+  eleventyConfig.addFilter('htmlDateString', (dateObj) => {
+    return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
+  });
 
     eleventyConfig.setBrowserSyncConfig({
 		  files: './public/assets/css/**/*.css'
