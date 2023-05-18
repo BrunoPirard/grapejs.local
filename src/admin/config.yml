@@ -2,8 +2,8 @@ backend:
   name: github
   repo: BrunoPirard/grapejs.local
 
-media_folder: "public/images"
-public_folder: "/images"
+media_folder: "public/img"
+public_folder: "/img"
 
 collections:
   - name: "posts"
@@ -27,4 +27,3 @@ collections:
       - { label: "Pages Title", name: "title", widget: "string" }
       - { label: "Pages Type", name: "type", widget: "string" }
       - { label: "Pages Description", name: "description", widget: "markdown" }
-      - { label: "Pages Date", name: "date", widget: "datetime" }
