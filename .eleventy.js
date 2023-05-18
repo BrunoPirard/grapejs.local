@@ -30,17 +30,12 @@ module.exports = function (eleventyConfig) {
     });
 
     eleventyConfig.addFilter("sitemapDate", (dateObj) => {
-        return dayjs(dateObj, {zone: 'utc'}).format("YYYY-MM-DD");
+        return dayjs(dateObj).toISOString();
     });
 
     eleventyConfig.addFilter("year", () => {
         return dayjs().format("YYYY");
     });
-
-    // Add Date filters v2 luxon
-    // eleventyConfig.addFilter("postDate", (dateObj) => {
-    //   return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
-    // });
 
     /* SASS compiler */
     eleventyConfig.setBrowserSyncConfig({

@@ -4,7 +4,7 @@
   "siteBaseURL": "/",
   "siteAuthor": "BulgaWeb",
   "siteDescription": "Description du site",
-  "description": "This is a default template for Eleventy with TailwindCSS",
+  "description": "This is a default template for Eleventy",
   "keywords": "eleventy, 11ty, css",
   "image": "https://www.11ty.dev/img/built/IdthKOzqFA-350.avif",
   "twitter": "@twitter",
