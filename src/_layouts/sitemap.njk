@@ -5,6 +5,9 @@
         <url>
             <loc>{{ absoluteUrl }}</loc>
             <lastmod>{{ page.date | sitemapDate }}</lastmod>
+            <priority>
+                {% if item.url == '/' %}1.0{% else %}0.8{% endif %}
+            </priority>
         </url>
     {%- endfor %}
 </urlset>
