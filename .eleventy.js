@@ -3,6 +3,7 @@ const languageFrench = require('dayjs/locale/fr');
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
+const fs = require("fs");
 
 module.exports = function (eleventyConfig) {
     // Passtrough

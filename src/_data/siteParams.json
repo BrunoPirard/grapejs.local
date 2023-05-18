@@ -8,6 +8,7 @@
   "keywords": "eleventy, 11ty, css",
   "image": "https://www.11ty.dev/img/built/IdthKOzqFA-350.avif",
   "twitter": "@twitter",
+  "siteURLforOG": "https://example.com",
   "card": "summary",
   "respSizes": [ 300, 450, 600, 750, 900, 1050, 1200, 1350, 1500 ]
 }

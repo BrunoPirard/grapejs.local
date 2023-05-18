@@ -1,4 +1,4 @@
-{% set fallbackImg = "typewriter.webp" %}
+{% set fallbackImg = "/img/typewriter.webp" %}
 {% set eleventyVersion = pkg.devDependencies['@11ty/eleventy'] | replace("^", "") %}
 {% set eleventyEnv = projEnv.environment %}
 <head>
@@ -25,8 +25,8 @@
         <meta property="og:url" content="{{ siteparams.siteURLforOG }}{{ page.url }}"/>
     {% endif %}
     <!-- Twitter meta -->
-    <meta name="twitter:site" content="@BryceWrayTX"/>
-    <meta name="twitter:creator" content="@BryceWrayTX"/>
+    <meta name="twitter:site" content="{{ twitter }}"/>
+    <meta name="twitter:creator" content="{{ twitter }}"/>
     <meta name="twitter:card" content="summary_large_image"/>
     <meta
         name="twitter:image"

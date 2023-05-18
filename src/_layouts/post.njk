@@ -7,16 +7,18 @@ layout: base.njk
     <img src="{{ featuredImage }}" alt="{{ featuredImage }}" width="600">
         <p>{{ content | safe }}</p>
         <p>Publié par {{ siteParams.siteAuthor }} le {{ post.date | date }}</p>
-        {% set previousPost = collections.posts | getPreviousCollectionItem(page) %}
-        {% if previousPost %}
-            <p>Précédent
-                <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a>
-            </p>
-        {% endif %}
-        {% set nextPost = collections.posts | getNextCollectionItem(page) %}
-        {% if nextPost %}
-            <p>Suivant
-                <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
-            </p>
-        {% endif %}
+        <div class="previous-next">
+            {% set previousPost = collections.posts | getPreviousCollectionItem(page) %}
+            {% if previousPost %}
+                <p>Précédent
+                    <a href="{{ previousPost.url }}">{{ previousPost.data.title }}</a>
+                </p>
+            {% endif %}
+            {% set nextPost = collections.posts | getNextCollectionItem(page) %}
+            {% if nextPost %}
+                <p>Suivant
+                    <a href="{{ nextPost.url }}">{{ nextPost.data.title }}</a>
+                </p>
+            {% endif %}
+        </div>
     </article>

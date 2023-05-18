@@ -1,6 +1,8 @@
 <li>
-    <h2>{{ post.data.title }}</h2>
-    <img src="{{ post.data.featuredImage }}" alt="{{ post.data.imageAlt }}" width="500px">
-    <p>{{ post.data.description }}</p>
-    <a href="{{ post.url | url }}" class="btn btn-primary">Lire plus</a>
+    <article>
+        <h2>{{ post.data.title }}</h2>
+        <img src="{{ post.data.featuredImage }}" alt="{{ post.data.imageAlt }}" width="500px">
+        <p>{{ post.data.description }}</p>
+        <a href="{{ post.url | url }}" class="btn btn-primary">Lire plus</a>
+    </article>
 </li>

@@ -10,7 +10,7 @@ collections:
     label: "Posts"
     folder: "src/posts"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "{{slug}}"
     fields:
       - { label: "Posts Title", name: "title", widget: "string" }
       - { label: "Posts Type", name: "type", widget: "string" }
@@ -18,12 +18,18 @@ collections:
       - { label: "Posts Date", name: "date", widget: "datetime" }
       - { label: "Posts Featured", name: "featuredImage", widget: "image" }
 
+  # Our pages e.g. About
   - name: "pages"
     label: "Pages"
-    folder: "src/pages"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    folder: "pages"
+    create: true # Change to true to allow editors to create new pages
+    slug: "{{slug}}"
     fields:
-      - { label: "Pages Title", name: "title", widget: "string" }
-      - { label: "Pages Type", name: "type", widget: "string" }
-      - { label: "Pages Description", name: "description", widget: "markdown" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - label: "Navigation" # https://www.11ty.dev/docs/plugins/navigation/
+        name: "eleventyNavigation"
+        widget: "object"
+        fields:
+          - { label: "Key", name: "key", widget: "string" }
+          - { label: "Order", name: "order", widget: "number", default: 0 }
