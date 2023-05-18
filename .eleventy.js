@@ -1,4 +1,5 @@
-const { DateTime } = require("luxon");
+const dayjs = require('dayjs');
+const languageFrench = require('dayjs/locale/fr');
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
@@ -19,11 +20,11 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
     eleventyConfig.addFilter("date", (dateObj) => {
-        return dayjs(dateObj).format("D MMMM YYYY");
+        return dayjs(dateObj).locale(languageFrench).format("D MMMM YYYY");
     });
 
     eleventyConfig.addFilter("sitemapDate", (dateObj) => {
-        return dayjs(dateObj).toISOString();
+        return dayjs(dateObj, {zone: 'utc'}).format("YYYY-MM-DD");
     });
 
     eleventyConfig.addFilter("year", () => {
@@ -31,36 +32,32 @@ module.exports = function (eleventyConfig) {
     });
 
     // Add Date filters v2 luxon
-    eleventyConfig.addFilter("readableDate", dateObj => {
-        return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("dd LLL yyyy");
-    });
+    // eleventyConfig.addFilter("postDate", (dateObj) => {
+    //   return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
+    // });
 
-    // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
-    eleventyConfig.addFilter('htmlDateString', (dateObj) => {
-        return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat('yyyy-LL-dd');
-    });
     /* SASS compiler */
     eleventyConfig.setBrowserSyncConfig({
 		    files: './public/assets/css/**/*.css'
 	  });
 
     // Override Browsersync defaults (used only with --serve)
-  eleventyConfig.setBrowserSyncConfig({
-    callbacks: {
-      ready: function(err, browserSync) {
-        const content_404 = fs.readFileSync('_site/404.html');
+    eleventyConfig.setBrowserSyncConfig({
+      callbacks: {
+        ready: function(err, browserSync) {
+          const content_404 = fs.readFileSync('_site/404.html');
 
-        browserSync.addMiddleware("*", (req, res) => {
-          // Provides the 404 content without redirect.
-          res.writeHead(404, {"Content-Type": "text/html; charset=UTF-8"});
-          res.write(content_404);
-          res.end();
-        });
+          browserSync.addMiddleware("*", (req, res) => {
+            // Provides the 404 content without redirect.
+            res.writeHead(404, {"Content-Type": "text/html; charset=UTF-8"});
+            res.write(content_404);
+            res.end();
+          });
+        },
       },
-    },
-    ui: false,
-    ghostMode: false
-  });
+      ui: false,
+      ghostMode: false
+    });
 
     /* Markdown plugins */
     // https://www.11ty.dev/docs/languages/markdown/

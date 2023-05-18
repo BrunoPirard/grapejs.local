@@ -21,7 +21,6 @@
     "@11ty/eleventy-plugin-rss": "^1.2.0",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "dayjs": "^1.11.7",
-    "luxon": "^3.3.0",
     "markdown-it": "^13.0.1",
     "markdown-it-bracketed-spans": "^1.0.1",
     "markdown-it-footnote": "^3.0.3",
