@@ -1,10 +1,10 @@
 ---
 layout: post.njk
-title: My first post
+title: Mon premier poste
 type: posts
-description: The first post
+description: Ceci est la description de mon premier poste
 date: 2023-05-01
-featuredImage: /images/image.webp
+featuredImage: /img/image.webp
 ---
 
-<p>Hello here is my first blog post<p>
+<p>Bonjour, voici le premier poste de mon blog<p>

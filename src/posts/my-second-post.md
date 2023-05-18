@@ -1,10 +1,10 @@
 ---
 layout: post.njk
-title: My Second post
+title: Mon second poste
 type: posts
-description: The Second post
+description: Description de mon second poste
 date: 2023-05-04
-featuredImage: /images/typewriter.webp
+featuredImage: /img/typewriter.webp
 ---
 
-Hello here is my second blog post hey hey
+<p>Il faudra bientôt en ajouter un troisième</p>

@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="fr-FR">
     {% include 'partials/head.njk' %}
-    {% include 'partials/header.njk' %}
+    {# {% include 'partials/header.njk' %} #}
+    {% include 'theme/topbar.njk' %}
+    {% include 'partials/navigation.njk' %}
     <body>
         <main>
             {{ content | safe }}

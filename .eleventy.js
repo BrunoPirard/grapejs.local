@@ -6,10 +6,16 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 module.exports = function (eleventyConfig) {
     // Passtrough
-    eleventyConfig.addPassthroughCopy('src/robots.txt')
+    eleventyConfig.addPassthroughCopy('src/robots.txt');
+    //eleventyConfig.addPassthroughCopy('src/.htaccess');
     eleventyConfig.addPassthroughCopy("src/assets/fonts");
+    eleventyConfig.addPassthroughCopy("src/assets/js");
+    eleventyConfig.addPassthroughCopy("src/assets/lib");
+
+    eleventyConfig.addPassthroughCopy("src/assets/final");
+
     eleventyConfig.addPassthroughCopy("src/admin");
-    eleventyConfig.addPassthroughCopy("src/images");
+    eleventyConfig.addPassthroughCopy("src/img");
 
     // Plugins
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
