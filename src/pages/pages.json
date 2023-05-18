@@ -1,4 +1,5 @@
 {
-    "tags": "pages",
-    "layout": "page.njk"
+    "tags": ["pages"],
+    "layout": "page.njk",
+    "permalink": "/{{ title | slugify }}/"
 }
