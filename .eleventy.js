@@ -7,26 +7,25 @@ const fs = require("fs");
 const NOT_FOUND_PATH = "_site/404.html";
 
 module.exports = function (eleventyConfig) {
-    // Passtrough
-    eleventyConfig.addPassthroughCopy('src/robots.txt');
-    eleventyConfig.addPassthroughCopy('src/.htaccess');
-    eleventyConfig.addPassthroughCopy("src/assets/fonts");
-    eleventyConfig.addPassthroughCopy("src/assets/js");
-    eleventyConfig.addPassthroughCopy("src/assets/lib");
-
-    eleventyConfig.addPassthroughCopy("src/assets/final");
-
-    eleventyConfig.addPassthroughCopy("src/admin");
-    eleventyConfig.addPassthroughCopy("src/img");
 
     // Plugins
     eleventyConfig.addPlugin(eleventyNavigationPlugin);
     eleventyConfig.addPlugin(syntaxHighlight);
     eleventyConfig.addPlugin(pluginRss, {
-    posthtmlRenderOptions: {
-      closingSingleTag: "default" // opt-out of <img/>-style XHTML single tags
-    }
+      posthtmlRenderOptions: {
+        closingSingleTag: "default" // opt-out of <img/>-style XHTML single tags
+      }
     });
+
+    // Passtrough
+    eleventyConfig.addPassthroughCopy("src/robots.txt");
+    eleventyConfig.addPassthroughCopy("src/.htaccess");
+    eleventyConfig.addPassthroughCopy("src/assets/fonts");
+    eleventyConfig.addPassthroughCopy("src/assets/js");
+    eleventyConfig.addPassthroughCopy("src/assets/lib");
+    eleventyConfig.addPassthroughCopy("src/assets/final");
+    eleventyConfig.addPassthroughCopy("src/admin");
+    eleventyConfig.addPassthroughCopy("src/img");
 
     // Add Date filters
     eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
