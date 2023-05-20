@@ -27,7 +27,7 @@ collections:
   # Our pages e.g. About
   - name: "pages"
     label: "Pages"
-    folder: "pages"
+    folder: "src/pages"
     create: true # Change to true to allow editors to create new pages
     slug: "{{slug}}"
     fields:
