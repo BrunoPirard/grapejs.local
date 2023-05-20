@@ -3,7 +3,7 @@ backend:
   repo: BrunoPirard/grapejs.local
 
 media_folder: "public/img"
-# public_folder: "/img"
+public_folder: "/img/uploads"
 
 collections:
   - name: "posts"
@@ -23,8 +23,6 @@ collections:
           required: false,
         }
       - { label: "Tags", name: "tags", widget: "list", default: ["posts"] }
-
-  # Our pages e.g. About
   - name: "pages"
     label: "Pages"
     folder: "src/pages"

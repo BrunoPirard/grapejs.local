@@ -3,7 +3,7 @@ backend:
   repo: BrunoPirard/grapejs.local
 
 media_folder: "public/img"
-public_folder: "/img"
+public_folder: "/img/uploads"
 
 collections:
   - name: "posts"
@@ -14,19 +14,26 @@ collections:
     fields:
       - { label: "Posts Title", name: "title", widget: "string" }
       - { label: "Posts Type", name: "type", widget: "string" }
-      - { label: "Posts Description", name: "description", widget: "markdown" }
+      - { label: "Posts Description", name: "description", widget: "string" }
       - { label: "Posts Date", name: "date", widget: "datetime" }
-      - { label: "Posts Featured", name: "featuredImage", widget: "image" }
+      - {
+          label: "Featured Image",
+          name: "featuredImage",
+          widget: "image",
+          required: false,
+        }
+      - { label: "Tags", name: "tags", widget: "list", default: ["posts"] }
 
   # Our pages e.g. About
   - name: "pages"
     label: "Pages"
-    folder: "pages"
+    folder: "src/pages"
     create: true # Change to true to allow editors to create new pages
     slug: "{{slug}}"
     fields:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Tags", name: "tags", widget: "list", default: ["pages"] }
       - label: "Navigation" # https://www.11ty.dev/docs/plugins/navigation/
         name: "eleventyNavigation"
         widget: "object"
