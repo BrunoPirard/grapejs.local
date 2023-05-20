@@ -7,22 +7,22 @@
     <meta name="generator" content="Eleventy v{{ eleventyVersion }}"/>
     {% if page.url == "/" %}
         <title>{{ siteParams.siteTitle }}</title>
-        <meta property="og:title" content="{{ siteparams.siteTitle }}"/>
+        <meta property="og:title" content="{{ siteParams.siteTitle }}"/>
     {% else %}
-        <title>{{ title }} | {{ siteparams.siteTitle }}</title>
-        <meta property="og:title" content="{{ title }} | {{ siteparams.siteTitle }}"/>
+        <title>{{ title }} | {{ siteParams.siteTitle }}</title>
+        <meta property="og:title" content="{{ title }} | {{ siteParams.siteTitle }}"/>
     {% endif %}
     <meta
         property="og:image"
         content="/images/{% if featured_image %}{{ featured_image }}{% else %}{{ fallbackImg }}{% endif %}"/>
     {% if page.url == "/" %}
-        <meta name="description" content="{{ siteparams.siteDescription }}"/>
-        <meta property="og:description" content="{{ siteparams.siteDescription }}"/>
-        <meta property="og:url" content="{{ siteparams.siteURLforOG }}/"/>
+        <meta name="description" content="{{ siteParams.siteDescription }}"/>
+        <meta property="og:description" content="{{ siteParams.siteDescription }}"/>
+        <meta property="og:url" content="{{ siteParams.siteURLforOG }}/"/>
     {% else %}
         <meta name="description" content="{{ description }}"/>
         <meta property="og:description" content="{{ description }}"/>
-        <meta property="og:url" content="{{ siteparams.siteURLforOG }}{{ page.url }}"/>
+        <meta property="og:url" content="{{ siteParams.siteURLforOG }}{{ page.url }}"/>
     {% endif %}
     <!-- Twitter meta -->
     <meta name="twitter:site" content="{{ twitter }}"/>
@@ -35,8 +35,8 @@
         <meta name="twitter:description" content="{{ description }}"/>
         <meta name="twitter:title" content="{{ title }}"/>
     {% else %}
-        <meta name="twitter:description" content="{{ siteparams.siteDescription }}"/>
-        <meta name="twitter:title" content="{{ siteparams.siteTitle }}"/>
+        <meta name="twitter:description" content="{{ siteParams.siteDescription }}"/>
+        <meta name="twitter:title" content="{{ siteParams.siteTitle }}"/>
     {% endif %}
     <link rel="icon" type="image/png" href="/img/icons/Eleventy-favicon-16x16.png" sizes="16x16"/>
     <link rel="icon" type="image/png" href="/img/icons/Eleventy-favicon-32x32.png" sizes="32x32"/>
