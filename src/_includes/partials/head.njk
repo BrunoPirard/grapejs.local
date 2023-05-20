@@ -40,8 +40,14 @@
     {% endif %}
     <link rel="icon" type="image/png" href="/img/icons/Eleventy-favicon-16x16.png" sizes="16x16"/>
     <link rel="icon" type="image/png" href="/img/icons/Eleventy-favicon-32x32.png" sizes="32x32"/>
-    <link
-    rel="icon" type="image/png" href="/img/icons/Eleventy-favicon-96x96.png" sizes="96x96"/> <!-- Google Web Fonts -->
+    <link rel="icon" type="image/png" href="/img/icons/Eleventy-favicon-96x96.png" sizes="96x96"/>
+    {% if eleventyEnv == "production" %}
+        <link rel="preload" href="/css/{{ csshash.indexCSS }}" as="style"/>
+        <link rel="stylesheet" href="/css/{{ csshash.indexCSS }}" type="text/css"/>
+    {% else %}
+        <link rel="stylesheet" href="{{ '/assets/final/style.css' | url }}" type="text/css"/>
+        <link rel="stylesheet" href="{{ '/assets/final/bootstrap.min.css' | url }}" type="text/css"/>
+    {% endif %}
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link
@@ -52,11 +58,4 @@
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet"/> <!-- Libraries Stylesheet -->
     <link href="/assets/lib/animate/animate.min.css" rel="stylesheet"/>
     <link href="/assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet"/>
-    {% if eleventyEnv == "production" %}
-        <link rel="preload" href="/css/{{ csshash.indexCSS }}" as="style"/>
-        <link rel="stylesheet" href="/css/{{ csshash.indexCSS }}" type="text/css"/>
-    {% else %}
-        <link rel="stylesheet" href="{{ '/assets/final/style.css' | url }}" type="text/css"/>
-        <link rel="stylesheet" href="{{ '/assets/final/bootstrap.min.css' | url }}" type="text/css"/>
-    {% endif %}
 </head>
