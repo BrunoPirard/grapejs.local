@@ -2,8 +2,7 @@ backend:
   name: github
   repo: BrunoPirard/grapejs.local
 
-media_folder: "public/img"
-public_folder: "img/"
+media_folder: "src/img"
 
 collections:
   - name: "posts"

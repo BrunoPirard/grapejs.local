@@ -42,6 +42,19 @@ module.exports = function (eleventyConfig) {
         return dayjs().format("YYYY");
     });
 
+    // Return all the tags used in a collection
+    eleventyConfig.addFilter("getAllTags", collection => {
+      let tagSet = new Set();
+      for(let item of collection) {
+        (item.data.tags || []).forEach(tag => tagSet.add(tag));
+      }
+      return Array.from(tagSet);
+    });
+
+    eleventyConfig.addFilter("filterTagList", function filterTagList(tags) {
+      return (tags || []).filter(tag => ["all", "posts", "pages", "members"].indexOf(tag) === -1);
+    });
+
     /* SASS compiler */
     eleventyConfig.setBrowserSyncConfig({
 		    files: './public/assets/css/**/*.css'
