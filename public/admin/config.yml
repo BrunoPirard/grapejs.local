@@ -3,7 +3,7 @@ backend:
   repo: BrunoPirard/grapejs.local
 
 media_folder: "public/img"
-public_folder: "/img/uploads"
+public_folder: "img/"
 
 collections:
   - name: "posts"
@@ -23,8 +23,6 @@ collections:
           required: false,
         }
       - { label: "Tags", name: "tags", widget: "list", default: ["posts"] }
-
-  # Our pages e.g. About
   - name: "pages"
     label: "Pages"
     folder: "src/pages"
@@ -40,3 +38,12 @@ collections:
         fields:
           - { label: "Key", name: "key", widget: "string" }
           - { label: "Order", name: "order", widget: "number", default: 0 }
+  - name: "members"
+    label: "Members"
+    folder: "src/members"
+    create: true # Change to true to allow editors to create new pages
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Tags", name: "tags", widget: "list", default: ["members"] }
+      - { label: "Description", name: "description", widget: "string" }
