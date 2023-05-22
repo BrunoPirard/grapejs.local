@@ -113,16 +113,6 @@ h6,
     top: -100px;
     transition: .5s;
 }
-/*** modifs ***/
-.navbar {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between !important;
-    padding-top: .5rem;
-    padding-bottom: .5rem;
-}
 
 .navbar .navbar-brand {
     position: relative;
@@ -708,4 +698,9 @@ h6,
 .copyright {
     color: #B0B9AE;
     border-top: 1px solid rgba(255, 255, 255, .1);
+}
+
+.navbar-expand-lg {
+    flex-wrap: nowrap;
+    justify-content: space-between !important;
 }
