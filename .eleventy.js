@@ -23,7 +23,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/assets/fonts");
     eleventyConfig.addPassthroughCopy("src/assets/js");
     eleventyConfig.addPassthroughCopy("src/assets/lib");
-    eleventyConfig.addPassthroughCopy("src/assets/final");
+    //eleventyConfig.addPassthroughCopy("src/assets/final");
     eleventyConfig.addPassthroughCopy("src/admin");
     eleventyConfig.addPassthroughCopy("src/img");
 
